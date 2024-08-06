@@ -6,5 +6,5 @@ Is a visualization helper for plots using plotly
 
 # Running locally 
 ```python 
-your_code = do_some_stuff
+streamlit run home.py
 ```
