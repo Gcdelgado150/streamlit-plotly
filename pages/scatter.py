@@ -1,16 +1,17 @@
 import streamlit as st
 from helpers import get_menu_plot, get_menu_doc
 from helpers import remove_space_from_code_snippet
-
 import plotly.express as px
 import plotly.graph_objects as go
+from helpers import create_sidebar
 
-st.set_page_config(layout="wide")
-st.title(f"{__file__.split('/')[-1].capitalize().split('.')[0]}")
-get_menu_plot(show_all=False)
+
+st.set_page_config(page_title=f"{__file__.split('/')[-1].capitalize().split('.')[0]}", 
+                   layout="wide")
+create_sidebar()
 
 # Scatter
-if 1:
+with st.container(border=True):
     st.header("Scatter plot using px.scatter")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter.html",
                  link2="https://plotly.com/python/line-and-scatter/")
@@ -52,7 +53,7 @@ if 1:
 
 
 # Scatter 3D
-if 1:
+with st.container(border=True):
     st.header("Scatter 3d using px.scatter_3d")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter_3d.html",
                  link2="https://plotly.com/python/3d-scatter-plots/")
@@ -81,7 +82,7 @@ if 1:
         st.code(remove_space_from_code_snippet(code), language="python")
 
 # Scatter Polar
-if 1:
+with st.container(border=True):
     st.header("Scatter Polar using px.scatter_polar")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter_polar.html",
                  link2="https://plotly.com/python/polar-chart/")
@@ -111,7 +112,7 @@ if 1:
 
 
 # Scatter Ternary
-if 1:
+with st.container(border=True):
     st.header("Scatter Ternary using px.scatter_polar")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter_ternary.html",
                  link2="https://plotly.com/python/ternary-plots/")
@@ -173,7 +174,7 @@ if 0:
 
 
 # Scatter Geo
-if 1:
+with st.container(border=True):
     st.header("Scatter Geo using px.scatter_geo")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter_geo.html",
                  link2="https://plotly.com/python/scatter-plots-on-maps/")
@@ -204,7 +205,7 @@ if 1:
         st.code(remove_space_from_code_snippet(code), language="python")
 
 # Scatter Matrix
-if 1:
+with st.container(border=True):
     st.header("Scatter Matrix using px.scatter_matrix")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.scatter_matrix.html",
                  link2="https://plotly.com/python/splom/")

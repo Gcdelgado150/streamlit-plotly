@@ -13,7 +13,8 @@ def get_menu_plot(show_all=True, default_division=4):
 
             for i, c in enumerate(cols):
                 with c:
-                    st.page_link(f"pages/{pages[gi]}", label=f"{pages[gi].capitalize().split('.')[0]}")
+                    with st.container(border=True):
+                        st.page_link(f"pages/{pages[gi]}", label=f"{pages[gi].capitalize().split('.')[0]}")
                     gi += 1
 
         if remain != 0:
@@ -21,14 +22,14 @@ def get_menu_plot(show_all=True, default_division=4):
 
             for i, c in enumerate(cols):
                 with c:
-                    st.page_link(f"pages/{pages[gi]}", label=f"{pages[gi].capitalize().split('.')[0]}")
+                    with st.container(border=True):
+                        st.page_link(f"pages/{pages[gi]}", label=f"{pages[gi].capitalize().split('.')[0]}")
                     gi += 1 
-
-    st.page_link("home.py", label="Home", icon="🏠")
     
     if show_all:
         show_pages()
     else:
+        # st.page_link("home.py", label="Home", icon="🏠")
         with st.expander("Show all plot options"):
             show_pages()
 

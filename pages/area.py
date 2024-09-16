@@ -3,13 +3,14 @@ from helpers import get_menu_plot, get_menu_doc
 from helpers import remove_space_from_code_snippet
 import plotly.express as px
 import plotly.graph_objects as go
+from helpers import create_sidebar
 
-st.set_page_config(layout="wide")
-st.title(f"{__file__.split('/')[-1].capitalize().split('.')[0]}")
-get_menu_plot(show_all=False)
+st.set_page_config(page_title=f"{__file__.split('/')[-1].capitalize().split('.')[0]}", 
+                   layout="wide")
+create_sidebar()
 
 # Area
-if 1:
+with st.container(border=True):
     st.header("Area plot using px.area")
     get_menu_doc(link1="https://plotly.com/python-api-reference/generated/plotly.express.area.html",
                  link2="https://plotly.com/python/filled-area-plots/")
